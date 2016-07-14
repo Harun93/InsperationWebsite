@@ -1,0 +1,146 @@
+/* ===========================
+   ===== Main Navigation ===== 
+   =========================== */
+.Navigation nav {
+	position: fixed;
+	z-index: 10;
+	background: #666;
+	font-size: 1.143em;
+	height: 40px;
+	width:100%;
+	line-height: 30px;
+	margin: 0 auto 30px auto;
+	text-align: center;
+	border-radius: 5px;
+
+}
+	
+.Navigation nav ul {
+	list-style: none; 
+	margin: 0 auto;
+}
+
+.Navigation nav ul li {
+	float: centre; 
+	display: inline; 
+}
+	
+.Navigation nav a:link, .Navigation nav a:visited {
+	color: #fff;
+	display: inline-block;
+	height: 30px;
+	padding: 5px 23px;
+	text-decoration: none;
+}
+.Navigation nav a:hover, .Navigation nav a:active,
+.Navigation nav .active a:link, .Navigation nav .active a:visited {
+	background: #CF5C3F;
+	color: #fff;
+	text-shadow: none !important;
+}
+	
+.Navigation nav li a {
+	border-radius: 5px;
+}
+
+.Navigation img {
+	width: 30%;
+	height: auto;
+	margin: 3% 0;
+}
+
+
+
+body,div,ul,ol,li{ 
+	margin:0;
+	padding:0;
+}
+body {
+	background-image: url('img/bg.png');
+	color: #000305;
+	font-size: 87.5%; /* Base font size: 14px */
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 1.429;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	}
+	
+/* CSS reset */
+ol,ul {
+	list-style:none;
+}
+
+/* ===========================
+   ======= Slideshow  ======== 
+   =========================== */
+.slideshow,
+.slideshow:after {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+.slideshow li span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 36s linear infinite 0s;
+}
+
+.slideshow li:nth-child(1) span { 
+	background-image: url(img/1.jpg);
+}
+.slideshow li:nth-child(2) span {
+    background-image: url(img/2.jpg);
+    animation-delay: 6s;
+}
+.slideshow li:nth-child(3) span {
+    background-image: url(img/3.jpg);
+    animation-delay: 12s;
+}
+.slideshow li:nth-child(4) span {
+    background-image: url(img/4.jpg);
+    animation-delay: 18s;
+}
+.slideshow li:nth-child(5) span {
+    background-image: url(img/5.jpg);
+    animation-delay: 24s;
+}
+.slideshow li:nth-child(6) span {
+    background-image: url(img/6.png);
+    animation-delay: 30s;
+}
+
+/* Animation for the slideshow images */
+@keyframes imageAnimation { 
+    0% { opacity: 0;
+		animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+/* Show at least something when animations not supported */
+.no-cssanimations .slideshow li span{
+	opacity: 1;
+}
+@media screen and (max-width: 1140px) { 
+	.slideshow li div h3 { font-size: 100px }
+}
+@media screen and (max-width: 600px) { 
+	.slideshow li div h3 { font-size: 50px }
+}
